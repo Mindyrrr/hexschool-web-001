@@ -1,0 +1,565 @@
+@import url('https://fonts.googleapis.com/css2family=Noto+Sans+TC:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+@mixin pad {
+    @media (max-width:675px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media (max-width: 375px) {
+        @content;
+    }
+}
+
+body {
+    font-family: "Noto Sans TC", sans-serif;
+    color: #fff;
+    line-height: 1.5;
+    background: #000;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    @include pad {
+        padding: 0 12px 0 12px;
+    }
+}
+
+a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.f-xxs {
+    font-size: 14px;
+}
+
+.f-xs {
+    font-size: 16px;
+}
+
+.f-s {
+    font-size: 20px;
+}
+
+.f-m {
+    font-size: 32px;
+}
+
+.f-l {
+    font-size: 48px;
+}
+
+.f-xl {
+    font-size: 80px;
+}
+
+.f-xxl {
+    font-size: 120px;
+}
+
+.lh-s {
+    line-height: 1.2;
+}
+
+.lh-m {
+    line-height: 1.5;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+.fc-b {
+    color: #000;
+}
+
+.fc-b80 {
+    color: #525252;
+}
+
+.fc-b60 {
+    color: #919191;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #fff;
+}
+
+h1 img {
+    display: block;
+    max-width: 245px;
+    height: 40px;
+}
+
+.header-list {
+    display: flex;
+
+    a {
+        margin-left: 20px;
+    }
+
+    @include pad {
+        display: none;
+    }
+}
+
+.icon {
+    display: none;
+
+    @include pad {
+        display: inline;
+    }
+}
+
+.banner {
+    margin-top: 40px;
+
+    @include pad {
+        font-size: 48px;
+    }
+}
+
+.btn {
+    margin-top: 40px;
+    padding: 20px 40px 20px 40px;
+    border: 1px solid #fff;
+    border-radius: 16px;
+}
+
+.animation-img {
+    display: flex;
+    justify-content: end;
+    margin-top: 100px;
+}
+
+.body-title {
+    display: flex;
+    justify-content: space-between;
+    margin: 160px 0 80px 0;
+
+    h4 {
+        max-width: 414px;
+    }
+
+    h3 {
+        max-width: 856px;
+    }
+
+    @include pad {
+        flex-direction: column;
+
+        h4 {
+            margin-bottom: 24px;
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 32px;
+        }
+    }
+}
+
+.information-card {
+    display: flex;
+    justify-content: space-between;
+
+    @include pad {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.information-list {
+    flex-direction: column;
+    max-width: 416px;
+    padding: 80px 40px 80px 40px;
+    height: 366px;
+    border: 1px solid #525252;
+    border-radius: 16px;
+
+    h4 {
+        margin: 10px 0 20px 0;
+    }
+
+    @include pad {
+        margin-bottom: 12px;
+    }
+}
+
+.cooperate-title {
+    margin: 160px 0 80px 0;
+}
+
+/* 參考每日任務 Day23 overflow 跟側邊陰影定位 */
+.cooperate-list {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    position: relative;
+
+    li {
+        margin-left: 20px;
+    }
+
+    img {
+        width: 160px;
+        height: 40px;
+        max-width: initial;
+    }
+}
+
+/* 隱藏 x 軸 */
+/* Hide scrollbar for Chrome, Safari and Opera */
+.cooperate-list::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.cooperate-list {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.cooperate-list::after,
+.cooperate-list::before {
+    content: "";
+    position: sticky;
+    width: 196px;
+    height: 40px;
+    top: 0;
+}
+
+.cooperate-list::before {
+    left: 0;
+    padding-right: 196px;
+    background: linear-gradient(90deg,
+            #000000 0%,
+            rgba(0, 0, 0, 0.991615) 11.79%,
+            rgba(0, 0, 0, 0.967585) 21.38%,
+            rgba(0, 0, 0, 0.9296) 29.12%,
+            rgba(0, 0, 0, 0.879348) 35.34%,
+            rgba(0, 0, 0, 0.818519) 40.37%,
+            rgba(0, 0, 0, 0.7488) 44.56%,
+            rgba(0, 0, 0, 0.671881) 48.24%,
+            rgba(0, 0, 0, 0.589452) 51.76%,
+            rgba(0, 0, 0, 0.5032) 55.44%,
+            rgba(0, 0, 0, 0.414815) 59.63%,
+            rgba(0, 0, 0, 0.325985) 64.66%,
+            rgba(0, 0, 0, 0.2384) 70.88%,
+            rgba(0, 0, 0, 0.153748) 78.62%,
+            rgba(0, 0, 0, 0.0737185) 88.21%,
+            rgba(0, 0, 0, 0) 100%);
+}
+
+.cooperate-list::after {
+    right: 0;
+    padding-left: 196px;
+    background: linear-gradient(90deg,
+            #000000 0%,
+            rgba(0, 0, 0, 0.991615) 11.79%,
+            rgba(0, 0, 0, 0.967585) 21.38%,
+            rgba(0, 0, 0, 0.9296) 29.12%,
+            rgba(0, 0, 0, 0.879348) 35.34%,
+            rgba(0, 0, 0, 0.818519) 40.37%,
+            rgba(0, 0, 0, 0.7488) 44.56%,
+            rgba(0, 0, 0, 0.671881) 48.24%,
+            rgba(0, 0, 0, 0.589452) 51.76%,
+            rgba(0, 0, 0, 0.5032) 55.44%,
+            rgba(0, 0, 0, 0.414815) 59.63%,
+            rgba(0, 0, 0, 0.325985) 64.66%,
+            rgba(0, 0, 0, 0.2384) 70.88%,
+            rgba(0, 0, 0, 0.153748) 78.62%,
+            rgba(0, 0, 0, 0.0737185) 88.21%,
+            rgba(0, 0, 0, 0) 100%);
+    transform: rotate(-180deg);
+}
+
+.cooperate-list li:not(:last-child) {
+    margin-right: 20px;
+}
+
+.star-list {
+    display: flex;
+}
+
+.commet-list {
+    display: flex;
+    justify-content: space-between;
+    margin: 160px 0 160px 0;
+}
+
+.comment-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 40px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.comment {
+    margin: 76px 0 30px 0;
+}
+
+.person {
+    display: flex;
+    justify-content: start;
+
+    img {
+        margin-right: 16px;
+    }
+}
+
+.name {
+    max-width: 175px;
+    height: 49px;
+}
+
+.rwd {
+    @include pad {
+        display: none;
+    }
+}
+
+.container {
+    background: #FFF;
+    border-radius: 160px;
+
+    @include pad {
+        border-radius: 20px;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 160px 100px 160px 100px;
+
+    @include pad {
+        padding: 80px 12px 80px 12px;
+    }
+}
+
+.container-title {
+    text-align: center;
+
+    @include pad {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+}
+
+.search-box {
+    margin: 80px 0 24px 0;
+    padding: 20px 40px;
+    background: #F2F2F2;
+    border-radius: 16px;
+
+    @include pad {
+        margin: 32px 0 16px 0;
+    }
+}
+
+.bar {
+    display: flex;
+    justify-content: space-between;
+
+    @include pad {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.bar-btn {
+    padding: 20px 32px 20px 40px;
+    border: 1px solid #F2F2F2;
+    border-radius: 16px;
+
+    @include pad {
+        order: 1;
+    }
+}
+
+.bar-list {
+    display: flex;
+    justify-content: center;
+
+    @include pad {
+        margin-top: 16px;
+        order: 2;
+        overflow-x: auto;
+    }
+}
+
+.list-btn {
+    padding: 8px 16px;
+
+    &:hover {
+        color: #000;
+        font-weight: 700;
+        background: #F2F2F2;
+        border-radius: 16px;
+    }
+}
+
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include pad {
+        justify-content: center;
+    }
+}
+
+.card {
+    margin: 12px;
+    height: 558px;
+    max-width: 416px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #f2f2f2;
+    border-radius: 16px;
+}
+
+.card-img {
+    overflow: hidden;
+    border-radius: 16px 16px 0 0;
+
+    img:hover {
+        transform: scale(1.15);
+        transition-duration: 0.3s;
+    }
+}
+
+.card-body {
+    flex-grow: 1;
+    padding: 20px 32px;
+}
+
+.list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 32px 20px 32px;
+    height: 64px;
+    border-top: 1px solid #f2f2f2;
+}
+
+.page-num {
+    margin: 40px 0 0 auto;
+    display: flex;
+
+    a {
+        display: block;
+        padding: 20px 25px 20px 25px;
+        margin-left: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            color: #fff;
+            background: #000;
+            border-radius: 16px;
+        }
+    }
+}
+
+.serve-title {
+    margin: 158px 0 40px 0;
+    text-align: center;
+
+    @include pad {
+        font-size: 32px;
+    }
+}
+
+.serve-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-body {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 160px;
+    padding: 80px 0 80px 0;
+    border-top: 1px solid #fff;
+
+    @include pad {
+        flex-wrap: wrap;
+        flex-direction: column;
+
+        h1 {
+            order: -1;
+            margin-bottom: 40px;
+        }
+
+        li {
+            font-size: 48px;
+        }
+    }
+}
+
+.footer-tool {
+    display: flex;
+    padding: 32px 0 0 0;
+    border-top: 1px solid #fff;
+
+    @include pad {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+}
+
+.community {
+    margin-left: 100px;
+
+    a {
+        margin-right: 20px;
+    }
+
+    @include pad {
+        margin: 36px 0 0 0;
+    }
+}
+
+.btt {
+    display: flex;
+    justify-content: end;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+
+    a {
+        border-radius: 10px;
+        background: #000;
+    }
+}
