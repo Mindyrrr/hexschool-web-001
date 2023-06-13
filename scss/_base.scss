@@ -388,6 +388,9 @@ h1 img {
 .bar-list {
   display: flex;
   justify-content: center;
+  a{
+    white-space: nowrap;
+  }
   @include pad{
     margin-top: 16px;
     order: 2;
